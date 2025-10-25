@@ -1,0 +1,898 @@
+/* ====== RESETEO GENERAL ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.layout {
+    display: flex;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    background: linear-gradient(to bottom, #1e88e5, #43a047);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+main {
+    margin-left: 240px;
+    /* deja espacio para el sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+/* ====== HEADER ====== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+header video {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* ====== SECCIONES ====== */
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.icono {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* ====== TARJETAS ====== */
+.tarjetas-bienestar,
+.tarjetas-proposito,
+.tarjetas-recursos,
+.tarjetas-blog {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card,
+.tarjeta-1,
+.tarjeta-2,
+.tarjeta-3,
+.tarjeta-recurso,
+.tarjeta-blog {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s;
+}
+
+.card:hover,
+.tarjeta-1:hover,
+.tarjeta-2:hover,
+.tarjeta-3:hover,
+.tarjeta-recurso:hover,
+.tarjeta-blog:hover {
+    transform: translateY(-5px);
+}
+
+/* ====== FORMULARIOS ====== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+form textarea,
+form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1e88e5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #1565c0;
+}
+
+/* ====== CONTACTO ====== */
+.contacto-directo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-whatsapp,
+.btn-correo,
+.btn-descarga,
+.btn-leer {
+    text-decoration: none;
+    padding: 10px;
+    background: #43a047;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover,
+.btn-correo:hover,
+.btn-descarga:hover,
+.btn-leer:hover {
+    background: #2e7d32;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1e3d59;
+    color: white;
+    margin-top: 40px;
+}
+
+/* ====== ANIMACIONES ====== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeLeft 1s forwards;
+}
+
+@keyframes fadeLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====== DELAYS ====== */
+.delay-s1 {
+    animation-delay: 0.3s;
+}
+
+.delay-s2 {
+    animation-delay: 0.6s;
+}
+
+.delay-s3 {
+    animation-delay: 0.9s;
+}
+
+.delay-s4 {
+    animation-delay: 1.2s;
+}
+
+.delay-s5 {
+    animation-delay: 1.5s;
+}
+
+/* ====== MURO COMUNIDAD ====== */
+#muro-comunidad {
+    margin-top: 20px;
+}
+
+#form-comentario {
+    margin-bottom: 20px;
+}
+
+#comentarios {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.comentario {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.comentario:last-child {
+    border-bottom: none;
+}
+
+#btn-admin {
+    margin-top: 10px;
+    background: #e53935;
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-admin:hover {
+    background: #b71c1c;
+}
+
+/* ====== TEST EMOCIONAL ====== */
+.test-contenedor {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.test-contenedor h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.test-contenedor form label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.test-contenedor select {
+    margin-bottom: 15px;
+}
+
+#resultado-test {
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#resultado-test h3 {
+    margin-bottom: 15px;
+}
+
+/* ====== MINI-PÁGINAS ====== */
+.mini-pagina {
+    display: none;
+    margin-left: 240px;
+    /* espacio para sidebar */
+    padding: 20px;
+}
+
+/* ====== BOTONES ====== */
+button,
+.btn {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #1e88e5;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+}
+
+.btn-danger {
+    background: #e53935;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+/* ====== BLOCKQUOTE ====== */
+blockquote {
+    font-style: italic;
+    border-left: 5px solid #1e88e5;
+    padding-left: 15px;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* ====== IMÁGENES ====== */
+section img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+    display: block;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        box-shadow: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .mini-pagina {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
+
+    .tarjetas-bienestar,
+    .tarjetas-proposito,
+    .tarjetas-recursos,
+    .tarjetas-blog {
+        flex-direction: column;
+    }
+
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        max-width: 100px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .btn-whatsapp,
+    .btn-correo,
+    .btn-descarga,
+    .btn-leer {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        font-size: 0.9em;
+    }
+
+    form button {
+        font-size: 0.9em;
+    }
+}
+
+/* ====== EXTRAS ====== */
+.nota-contacto {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #444;
+    font-style: italic;
+}
+
+.tarjeta-blog img,
+.tarjeta-recurso img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-blog h3,
+.tarjeta-recurso h3 {
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+
+/* Animación hover de imágenes */
+.tarjeta-blog img:hover,
+.tarjeta-recurso img:hover,
+section img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s;
+}
+
+/* ====== FINAL ====== */
+
+/* ========================= */
+/* Mejoras solicitadas       */
+/* ========================= */
+
+/* Test emocional con colores */
+.test-contenedor {
+    border-top: 6px solid #1e88e5;
+    border-left: 6px solid #43a047;
+    background: linear-gradient(to bottom right, #ffffff, #f1f8e9);
+}
+
+.test-contenedor h2 {
+    color: #1e88e5;
+}
+
+.test-contenedor form label {
+    color: #333;
+}
+
+.test-contenedor button {
+    background: #43a047;
+    color: #fff;
+    transition: 0.3s;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.test-contenedor button:hover {
+    background: #2e7d32;
+}
+
+/* Ajuste de videos */
+main video,
+section video {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Ajuste de imágenes */
+section img {
+    display: block;
+    margin: 20px auto;
+    max-width: 70%;
+    height: auto;
+}
+
+/* Evitar solapamientos */
+section {
+    margin-bottom: 60px;
+    padding: 10px;
+}
+/* ========================= */
+/* Ajustes en Blog y Recursos */
+/* ========================= */
+
+/* Tarjetas de Blog */
+.tarjeta-blog {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjeta-blog p {
+    margin-bottom: 15px;
+}
+
+.tarjeta-blog .btn-leer {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.tarjeta-blog .btn-leer:hover {
+    background: #1565c0;
+}
+
+/* Tarjetas de Recursos */
+.tarjeta-recurso {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjeta-recurso p {
+    margin-bottom: 15px;
+}
+
+.tarjeta-recurso .btn-descarga {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #43a047;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.tarjeta-recurso .btn-descarga:hover {
+    background: #2e7d32;
+}
+/* ========================= */
+/* Fondos uniformes para todas las secciones */
+/* ========================= */
+
+section {
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    /* azul → verde */
+    color: #fff;
+    padding: 50px 20px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos destacados */
+section h2,
+section h1 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Texto más legible */
+section p {
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Ajuste especial: Contacto con contraste */
+#contacto {
+    background: linear-gradient(135deg, #43a047, #1e88e5);
+    /* invertimos el orden */
+    color: #fff;
+}
+/* ========================= */
+/* Texto general             */
+/* ========================= */
+body,
+body * {
+    color: #000 !important;
+    /* negro para todo */
+    font-weight: bold !important;
+    /* todo en negrita */
+}
+
+/* Títulos centrados */
+section h1,
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold !important;
+    color: #fff !important;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplicar animaciones a cada sección */
+#quienes-somos h2 {
+    animation: fadeInUp 1s ease forwards !important;
+}
+
+#bienestar h2 {
+    animation: zoomIn 1s ease forwards !important;
+}
+
+#vida-proposito h2 {
+    animation: slideInLeft 1s ease forwards !important;
+}
+
+#recursos h2 {
+    animation: slideInRight 1s ease forwards !important;
+}
+
+#blog h2 {
+    animation: bounceIn 1s ease forwards !important;
+}
+
+#comunidad h2 {
+    animation: fadeInUp 1.2s ease forwards !important;
+}
+
+#contacto h2 {
+    animation: zoomIn 1.2s ease forwards !important;
+}
+/* Fondo degradado azul → verde */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d47a1, #00c853);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Contenedor para mejorar la legibilidad */
+.contenido {
+    background: rgba(255, 255, 255, 0.08);
+    /* capa transparente */
+    backdrop-filter: blur(6px);
+    /* efecto vidrio */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: #fff;
+    /* texto en blanco */
+}
+/* Mini-páginas ocultas por defecto */
+.mini-pagina {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Cuando la mini-página se activa */
+.mini-pagina.activa {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Títulos dentro de las mini-páginas */
+.mini-pagina h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Botón o navegación dentro */
+.mini-pagina .boton {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #0d47a1, #00c853);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.mini-pagina .boton:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00c853, #0d47a1);
+} 
+/* Estilo para comentarios */
+.comentario {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Botones */
+.comentario button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-top: 6px;
+    margin-right: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
+
+.comentario button:hover {
+    background: #357abd;
+}
+
+.comentario .btn-eliminar {
+    background: #ff4d4d;
+}
+
+.comentario .btn-eliminar:hover {
+    background: #cc0000;
+}
+
+/* Formulario de respuesta */
+.form-respuesta {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-respuesta input,
+.form-respuesta textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+.form-respuesta button {
+    align-self: flex-start;
+}
+
+/* Respuestas */
+.comentario-respuesta {
+    margin-left: 25px;
+    margin-top: 8px;
+    background: #eef6ff;
+    border-left: 3px solid #4a90e2;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+

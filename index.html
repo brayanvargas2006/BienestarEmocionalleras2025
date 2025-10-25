@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Emocional - Bienestar Emocional</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" type="image/png" href="imagenes/motivacion diaria.png">
+</head>
+
+<body>
+    <!-- TEST EMOCIONAL -->
+    <div id="pantalla-test">
+        <section class="test-contenedor">
+            <h2>🧠 Test de Bienestar Emocional</h2>
+            <b>Responde estas preguntas para conocer tu estado emocional.</b>
+
+            <form id="form-test">
+                <label>En la última semana, ¿con qué frecuencia te has sentido triste o sin energía?</label>
+                <select name="depresion" required>
+                    <option value="0">Nunca</option>
+                    <option value="1">Algunas veces</option>
+                    <option value="2">Frecuentemente</option>
+                    <option value="3">Casi siempre</option>
+                </select>
+
+                <label>¿Con qué frecuencia te sientes nervioso o preocupado?</label>
+                <select name="ansiedad" required>
+                    <option value="0">Nunca</option>
+                    <option value="1">Algunas veces</option>
+                    <option value="2">Frecuentemente</option>
+                    <option value="3">Casi siempre</option>
+                </select>
+
+                <label>¿Con qué frecuencia sientes que el estrés interfiere en tus actividades?</label>
+                <select name="estres" required>
+                    <option value="0">Nunca</option>
+                    <option value="1">Algunas veces</option>
+                    <option value="2">Frecuentemente</option>
+                    <option value="3">Casi siempre</option>
+                </select>
+
+                <button type="submit">Calcular resultado</button>
+            </form>
+
+            <div id="resultado-test" style="display:none; margin-top:20px;">
+                <h3>📊 Tus Resultados</h3>
+                <p id="res-depresion"></p>
+                <p id="res-ansiedad"></p>
+                <p id="res-estres"></p>
+                <button id="btn-continuar">Continuar a la página</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("form-test").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const dep = parseInt(this.depresion.value);
+            const ans = parseInt(this.ansiedad.value);
+            const est = parseInt(this.estres.value);
+
+            const depPct = Math.round((dep / 3) * 100);
+            const ansPct = Math.round((ans / 3) * 100);
+            const estPct = Math.round((est / 3) * 100);
+
+            document.getElementById("resultado-test").style.display = "block";
+            document.getElementById("res-depresion").innerText = "Depresión: " + depPct + "%";
+            document.getElementById("res-ansiedad").innerText = "Ansiedad: " + ansPct + "%";
+            document.getElementById("res-estres").innerText = "Estrés: " + estPct + "%";
+
+            this.style.display = "none";
+        });
+
+        document.getElementById("btn-continuar").addEventListener("click", function () {
+            window.location.href = "cascada.html";
+        });
+    </script>
+</body>
+
+</html>
